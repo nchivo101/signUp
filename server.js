@@ -7,7 +7,10 @@ var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
 var app = express();
 
-mongoose.connect('mongodb://localhost/demo6');
+var uristring = process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL ||
+    'mongodb://localhost/demo6';
+mongoose.connect(uristring);
 
 app.use(bodyParser.urlencoded({extended: true }));
 
