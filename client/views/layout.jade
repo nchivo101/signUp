@@ -1,0 +1,27 @@
+//- var error = error ;
+doctype html
+html
+    head
+        link(rel="stylesheet" href="libs/bootstrap.css")
+        script(src="libs/jquery.js")
+
+    body
+        .container
+            h3 You need to login 
+            form(method="post" action="/login")
+                .form-group
+                    label Username
+                    input.form-control(name="name")
+                .form-group
+                    label Password
+                    input(type="password").form-control(name="password")
+                a: button#login.btn.btn-default(type="submit") Log in 
+                br
+            a(href="/signup") Create new account
+                br
+            a(href='/guest') Join in as guest!
+
+            h1= error
+        script(src="js/layout.js")
+
+    
